@@ -26,6 +26,7 @@ module.exports = function(app) {
     });
 
     app.post("/api/friends", function(req, res) {
+        //find closest matching friends and push to the body
         if (friendsData.length < 5) {
           tableData.push(req.body);
           res.json(true);
