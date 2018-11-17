@@ -50,5 +50,6 @@ module.exports = function(app) {
 
         res.json(friendsData[closestFriendIndex]); //returns index of closest friend to create alert on survey page
 
+        console.log(friendsData)
     });
 };
