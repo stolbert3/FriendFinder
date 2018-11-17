@@ -16,3 +16,23 @@
     3. Once you've found the current user's most compatible friend, display the result as a modal pop-up.
         * The modal should display both the name and picture of the closest match.
 */
+
+var friendsData = require("../data/friends");
+
+module.exports = function(app) {
+
+    app.get("/api/friends", function(req, res) {
+      res.json(friendsData);
+    });
+
+    app.post("/api/friends", function(req, res) {
+        if (friendsData.length < 5) {
+          tableData.push(req.body);
+          res.json(true);
+        }
+        else {
+          waitListData.push(req.body);
+          res.json(false);
+        }
+    });
+};

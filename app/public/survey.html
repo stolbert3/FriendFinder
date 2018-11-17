@@ -1,2 +1,152 @@
-<!-- Should contain 10 questions. Each answer should be on a scale of 1 to 5 based on 
-        how much the user agrees or disagrees with a question. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Friend Finder</title>
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+
+  <div class="container">
+
+    <div class="jumbotron">
+      <h1 class="text-center"><span class="fa fa-fire"></span> Friend Finder</h1>
+      <hr>
+      <h2 class="text-center">Find your new best friend!</h2>
+      <br>
+
+      <div class="text-center">
+        <a href="/home"><button class="btn btn-lg btn-primary"><span class="fa fa-list-alt"></span> Home</button></a>
+        <!--<a href="/friends"><button class="btn btn-lg btn-danger"><span class="fa fa-credit-card"></span> View All Friends</button></a>-->
+      </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+          <!-- Reservation Page -->
+          <div class="card">
+            <div class="card-header">
+              Friend Survey
+            </div>
+            <div class="card-body">
+              <form role="form">
+                <div class="form-group">
+                  <label for="first">Name</label>
+                  <input type="text" class="form-control" id="friendName">
+                </div>
+                <div class="form-group">
+                  <label for="second">Picture</label>
+                  <input type="text" class="form-control" id="photo">
+                </div>
+                <div class="form-group">
+                  <label for="first">Question 1</label>
+                  <input type="text" class="form-control" id="first">
+                </div>
+                <div class="form-group">
+                  <label for="second">Question 2</label>
+                  <input type="text" class="form-control" id="second">
+                </div>
+                <div class="form-group">
+                  <label for="third">Question 3</label>
+                  <input type="text" class="form-control" id="third">
+                </div>
+                <div class="form-group">
+                  <label for="fourth">Question 4</label>
+                  <input type="text" class="form-control" id="fourth">
+                </div>
+                <div class="form-group">
+                  <label for="first">Question 5</label>
+                  <input type="text" class="form-control" id="fifth">
+                </div>
+                <div class="form-group">
+                  <label for="second">Question 6</label>
+                  <input type="text" class="form-control" id="sixth">
+                </div>
+                <div class="form-group">
+                  <label for="third">Question 7</label>
+                  <input type="text" class="form-control" id="seventh">
+                </div>
+                <div class="form-group">
+                  <label for="fourth">Question 8</label>
+                  <input type="text" class="form-control" id="eigth">
+                </div>
+                <div class="form-group">
+                  <label for="first">Question 9</label>
+                  <input type="text" class="form-control" id="ninth">
+                </div>
+                <div class="form-group">
+                  <label for="second">Question 10</label>
+                  <input type="text" class="form-control" id="tenth">
+                </div>
+                <button type="submit" class="btn btn-primary submit">Submit</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <footer class="footer">
+      <div class="container">
+        <p>footer</p>
+      </div>
+    </footer>
+
+  </div>
+
+</body>
+
+</html>
+
+<!-- BELOW CODE IS CRITICAL. IT HANDLES HOW FORM DATA IS SENT TO OUR SERVER -->
+<script type="text/javascript">
+        // In this code below we create the Front-end JavaScript which "POSTS" our form data to our express server.
+        // In essence, when the user hits submit, jQuery grabs all of the fields then sends a post request to our api
+        // Our api recognizes the route (/api/tables)... and then runs the associated code (found in api-routes.js).
+        // In this case the associated code "saves" the data to the table-data.js file or waitinglist-data.js file
+
+    $(".submit").on("click", function (event) {
+        event.preventDefault();
+            //create variable array for scores
+            var newFriendScores = [$("#first").val().trim(), $("#second").val().trim(), $("#third").val().trim(), $("#fourth").val().trim(), $("#fifth").val().trim(), $("#sixth").val().trim(), $("#seventh").val().trim(), $("#eigth").val().trim(), $("#ninth").val().trim(), $("#tenth").val().trim()];
+
+            // Here we grab the form elements
+            var newFriend = {
+                friendName: $("#friendName").val().trim(),
+                friendPhoto: $("#photo").val().trim(),
+                scores: newFriendScores
+            };
+            console.log(newFriend);
+
+                // This line is the magic. It"s very similar to the standard ajax function we used.
+                // Essentially we give it a URL, we give it the object we want to send, then we have a "callback".
+                // The callback is the response of the server. In our case, we set up code in api-routes that "returns" true or false
+                // depending on if a tables is available or not.
+
+            $.post("/api/friends", newFriend,
+                function (data) {
+                    alert("Yay! You are officially booked!");
+                
+                    // Clear the form when submitting
+                    $("#friendName").val("");
+                    $("#photo").val("");
+                    $("#first").val("");
+                    $("#second").val("");
+                    $("#third").val("");
+                    $("#fourth").val("");
+                    $("#fifth").val("");
+                    $("#sixth").val("");
+                    $("#seventh").val("");
+                    $("#eigth").val("");
+                    $("#ninth").val("");
+                    $("#tenth").val("");
+                });
+            
+            //redirect to friends results page
+
+        });
+
+</script>
