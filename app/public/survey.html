@@ -7,6 +7,9 @@
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
 
 </head>
 <body>
@@ -101,52 +104,44 @@
 
 </html>
 
-<!-- BELOW CODE IS CRITICAL. IT HANDLES HOW FORM DATA IS SENT TO OUR SERVER -->
+<!--Javascript-->
 <script type="text/javascript">
-        // In this code below we create the Front-end JavaScript which "POSTS" our form data to our express server.
-        // In essence, when the user hits submit, jQuery grabs all of the fields then sends a post request to our api
-        // Our api recognizes the route (/api/tables)... and then runs the associated code (found in api-routes.js).
-        // In this case the associated code "saves" the data to the table-data.js file or waitinglist-data.js file
-
     $(".submit").on("click", function (event) {
         event.preventDefault();
-            //create variable array for scores
-            var newFriendScores = [$("#first").val().trim(), $("#second").val().trim(), $("#third").val().trim(), $("#fourth").val().trim(), $("#fifth").val().trim(), $("#sixth").val().trim(), $("#seventh").val().trim(), $("#eigth").val().trim(), $("#ninth").val().trim(), $("#tenth").val().trim()];
+        //create variable array for scores
+        var newFriendScores = [$("#first").val().trim(), $("#second").val().trim(), $("#third").val().trim(), $("#fourth").val().trim(), $("#fifth").val().trim(), $("#sixth").val().trim(), $("#seventh").val().trim(), $("#eigth").val().trim(), $("#ninth").val().trim(), $("#tenth").val().trim()];
 
-            // Here we grab the form elements
-            var newFriend = {
+        //grab the form elements
+        var newFriend = {
                 friendName: $("#friendName").val().trim(),
                 friendPhoto: $("#photo").val().trim(),
                 scores: newFriendScores
-            };
-            console.log(newFriend);
+        };
+        console.log(newFriend);
 
-                // This line is the magic. It"s very similar to the standard ajax function we used.
-                // Essentially we give it a URL, we give it the object we want to send, then we have a "callback".
-                // The callback is the response of the server. In our case, we set up code in api-routes that "returns" true or false
-                // depending on if a tables is available or not.
+        $.post("/api/friends", newFriend,
+            function (data) {
+                //alert with closest friend image and name
+                console.log(data)
+                alert();
 
-            $.post("/api/friends", newFriend,
-                function (data) {
-                    alert("Yay! You are officially booked!");
+                //add buttons to alert: redirect to home, view all friends
                 
-                    // Clear the form when submitting
-                    $("#friendName").val("");
-                    $("#photo").val("");
-                    $("#first").val("");
-                    $("#second").val("");
-                    $("#third").val("");
-                    $("#fourth").val("");
-                    $("#fifth").val("");
-                    $("#sixth").val("");
-                    $("#seventh").val("");
-                    $("#eigth").val("");
-                    $("#ninth").val("");
-                    $("#tenth").val("");
-                });
-            
-            //redirect to friends results page
-
+                //clear the form when submitting
+                $("#friendName").val("");
+                $("#photo").val("");
+                $("#first").val("");
+                $("#second").val("");
+                $("#third").val("");
+                $("#fourth").val("");
+                $("#fifth").val("");
+                $("#sixth").val("");
+                $("#seventh").val("");
+                $("#eigth").val("");
+                $("#ninth").val("");
+                $("#tenth").val("");
         });
+
+    });
 
 </script>

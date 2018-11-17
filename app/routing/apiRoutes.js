@@ -28,29 +28,25 @@ module.exports = function(app) {
     app.post("/api/friends", function(req, res) {
         //find closest matching friends and push to the body
         var closestFriendScore = 0; //closest friend's score
-        var closestFriendName
-        var closestFriendPhoto
+        var closestFriendIndex = 0;
         var userAnswers = req.body.scores;
         for (i=0; i<friendsData.length; i++) {
             var scoreDifference = 0;
             var currentFriend = friendsData[i]
             var currentFriendScoreArray = currentFriend.scores;
+            console.log("Loop #" + i);
+            console.log("Score Array: " + currentFriendScoreArray);
             for (i=0; i<10; i++) {
                 scoreDifference += (Math.abs(userAnswers[i] - currentFriendScoreArray[i]));
+                console.log("Loop #" + i + " score difference " + scoreDifference)
             };
             if (scoreDifference < closestFriendScore) {
                 closestFriendScore = scoreDifference;
-                closestFriendName = currentFriend.friendName;
-                closestFriendPhoto = currentFriend.friendPhoto;
+                closestFriendIndex = i;
             };
         }
-        if (friendsData.length < 5) {
-          tableData.push(req.body);
-          res.json(true);
-        }
-        else {
-          waitListData.push(req.body);
-          res.json(false);
-        }
+
+        res.json(closestFriendIndex);
+
     });
 };
