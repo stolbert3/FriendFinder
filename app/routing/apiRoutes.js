@@ -26,8 +26,8 @@ module.exports = function(app) {
     });
 
     app.post("/api/friends", function(req, res) {
-        //find closest matching friends and push to the body
-        var closestFriendScore = 0; //closest friend's score
+        //find closest matching friend
+        var closestFriendScore = 0;
         var closestFriendIndex = 0;
         var userAnswers = req.body.scores;
         for (i=0; i<friendsData.length; i++) {
@@ -37,7 +37,7 @@ module.exports = function(app) {
             console.log("Loop #" + i);
             console.log("Score Array: " + currentFriendScoreArray);
             for (i=0; i<10; i++) {
-                scoreDifference += (Math.abs(userAnswers[i] - currentFriendScoreArray[i]));
+                scoreDifference += (Math.abs(parseInt(userAnswers[i]) - parseInt(currentFriendScoreArray[i])));
                 console.log("Loop #" + i + " score difference " + scoreDifference)
             };
             if (scoreDifference < closestFriendScore) {
@@ -47,7 +47,7 @@ module.exports = function(app) {
         }
 
         friendsData.push(req.body); //adds new friend to friend database
-        
+
         res.json(closestFriendIndex); //returns index of closest friend to create alert on survey page
 
     });

@@ -86,6 +86,31 @@
                   <input type="text" class="form-control" id="tenth">
                 </div>
                 <button type="submit" class="btn btn-primary submit">Submit</button>
+
+                <!-- Trigger the modal with a button -->
+                <button id="modal" style="display:none;" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">View Your Top Match!</button>
+
+                <!-- Modal -->
+                <div id="myModal" class="modal fade" role="dialog">
+                    <div class="modal-dialog">
+
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Modal Header</h4>
+                            </div>
+                            <div class="modal-body">
+                                <p>Some text in the modal.</p>
+                            </div>
+                            <div class="modal-footer">
+                                <a href="/home"><button class="btn btn-primary"><span class="fa fa-home"></span> Home</button></a>
+                                <a href="/all-friends"><button class="btn btn-danger"><span class="fa fa-bars"></span> View All Friends</button></a>
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
               </form>
             </div>
           </div>
@@ -123,7 +148,9 @@
             function (data) {
                 //alert with closest friend image and name
                 console.log(data)
-                alert();
+
+                $('.submit').hide();
+                $('#modal').css('display', 'block');
 
                 //add buttons to alert: redirect to home, view all friends
                 
