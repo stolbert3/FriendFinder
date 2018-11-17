@@ -23,8 +23,8 @@
       <br>
 
       <div class="text-center">
-        <a href="/home"><button class="btn btn-lg btn-primary"><span class="fa fa-home"></span> Home</button></a>
-        <a href="/all-friends"><button class="btn btn-lg btn-danger"><span class="fa fa-bars"></span> View All Friends</button></a>
+        <a href="./home"><button class="btn btn-lg btn-primary"><span class="fa fa-home"></span> Home</button></a>
+        <a href="./all-friends"><button class="btn btn-lg btn-danger"><span class="fa fa-bars"></span> View All Friends</button></a>
       </div>
     </div>
 
@@ -97,16 +97,16 @@
                         <!-- Modal content-->
                         <div class="modal-content">
                             <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <h4 class="modal-title">Modal Header</h4>
+                                <h4 class="modal-title">Your Top Match!</h4>
                             </div>
                             <div class="modal-body">
-                                <p>Some text in the modal.</p>
+                                <p id="top-match-name"></p>
+                                <img id="top-match-image">
                             </div>
                             <div class="modal-footer">
-                                <a href="/home"><button class="btn btn-primary"><span class="fa fa-home"></span> Home</button></a>
-                                <a href="/all-friends"><button class="btn btn-danger"><span class="fa fa-bars"></span> View All Friends</button></a>
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <a href="./home"><button class="btn btn-primary"><span class="fa fa-home"></span> Home</button></a>
+                                <a href="./all-friends"><button class="btn btn-danger"><span class="fa fa-bars"></span> View All Friends</button></a>
+                                <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
                             </div>
                         </div>
                     </div>
@@ -152,7 +152,12 @@
                 $('.submit').hide();
                 $('#modal').css('display', 'block');
 
-                //add buttons to alert: redirect to home, view all friends
+                //add top friend data to modal button
+                console.log(data.friendName);
+                console.log(data.friendPhoto);
+
+                $('#top-match-name').text(data.friendName);
+                $('#top-match-image').attr('src', data.friendPhoto);
                 
                 //clear the form when submitting
                 $("#friendName").val("");

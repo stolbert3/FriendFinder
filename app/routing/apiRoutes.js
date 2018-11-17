@@ -48,7 +48,7 @@ module.exports = function(app) {
 
         friendsData.push(req.body); //adds new friend to friend database
 
-        res.json(closestFriendIndex); //returns index of closest friend to create alert on survey page
+        res.json(friendsData[closestFriendIndex]); //returns index of closest friend to create alert on survey page
 
     });
 };
