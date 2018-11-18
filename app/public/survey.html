@@ -38,52 +38,112 @@
             <div class="card-body">
               <form role="form">
                 <div class="form-group">
-                  <label for="first">Name</label>
+                  <label for="name">Name</label>
                   <input type="text" class="form-control" id="friendName">
                 </div>
                 <div class="form-group">
-                  <label for="second">Picture</label>
+                  <label for="picture">Picture</label>
                   <input type="text" class="form-control" id="photo">
                 </div>
                 <div class="form-group">
                   <label for="first">Question 1</label>
-                  <input type="text" class="form-control" id="first">
+                  <div class="choices" id="first">
+                        <label><input type="radio" value="1">1</label>
+                        <label><input type="radio" value="2">2</label>
+                        <label><input type="radio" value="3">3</label>
+                        <label><input type="radio" value="4">4</label>
+                        <label><input type="radio" value="5">5</label>
+                  </div>
                 </div>
                 <div class="form-group">
                   <label for="second">Question 2</label>
-                  <input type="text" class="form-control" id="second">
+                  <div class="choices" id="second">
+                        <label><input type="radio" value="1">1</label>
+                        <label><input type="radio" value="2">2</label>
+                        <label><input type="radio" value="3">3</label>
+                        <label><input type="radio" value="4">4</label>
+                        <label><input type="radio" value="5">5</label>
+                  </div>
                 </div>
                 <div class="form-group">
                   <label for="third">Question 3</label>
-                  <input type="text" class="form-control" id="third">
+                  <div class="choices" id="third">
+                        <label><input type="radio" value="1">1</label>
+                        <label><input type="radio" value="2">2</label>
+                        <label><input type="radio" value="3">3</label>
+                        <label><input type="radio" value="4">4</label>
+                        <label><input type="radio" value="5">5</label>
+                  </div>
                 </div>
                 <div class="form-group">
                   <label for="fourth">Question 4</label>
-                  <input type="text" class="form-control" id="fourth">
+                  <div class="choices" id="fourth">
+                        <label><input type="radio" value="1">1</label>
+                        <label><input type="radio" value="2">2</label>
+                        <label><input type="radio" value="3">3</label>
+                        <label><input type="radio" value="4">4</label>
+                        <label><input type="radio" value="5">5</label>
+                  </div>
                 </div>
                 <div class="form-group">
-                  <label for="first">Question 5</label>
-                  <input type="text" class="form-control" id="fifth">
+                  <label for="fifth">Question 5</label>
+                  <div class="choices" id="fifth">
+                        <label><input type="radio" value="1">1</label>
+                        <label><input type="radio" value="2">2</label>
+                        <label><input type="radio" value="3">3</label>
+                        <label><input type="radio" value="4">4</label>
+                        <label><input type="radio" value="5">5</label>
+                  </div>
                 </div>
                 <div class="form-group">
-                  <label for="second">Question 6</label>
-                  <input type="text" class="form-control" id="sixth">
+                  <label for="sixth">Question 6</label>
+                  <div class="choices" id="sixth">
+                        <label><input type="radio" value="1">1</label>
+                        <label><input type="radio" value="2">2</label>
+                        <label><input type="radio" value="3">3</label>
+                        <label><input type="radio" value="4">4</label>
+                        <label><input type="radio" value="5">5</label>
+                  </div>
                 </div>
                 <div class="form-group">
-                  <label for="third">Question 7</label>
-                  <input type="text" class="form-control" id="seventh">
+                  <label for="seventh">Question 7</label>
+                  <div class="choices" id="seventh">
+                        <label><input type="radio" value="1">1</label>
+                        <label><input type="radio" value="2">2</label>
+                        <label><input type="radio" value="3">3</label>
+                        <label><input type="radio" value="4">4</label>
+                        <label><input type="radio" value="5">5</label>
+                  </div>
                 </div>
                 <div class="form-group">
-                  <label for="fourth">Question 8</label>
-                  <input type="text" class="form-control" id="eigth">
+                  <label for="eighth">Question 8</label>
+                  <div class="choices" id="eighth">
+                        <label><input type="radio" value="1">1</label>
+                        <label><input type="radio" value="2">2</label>
+                        <label><input type="radio" value="3">3</label>
+                        <label><input type="radio" value="4">4</label>
+                        <label><input type="radio" value="5">5</label>
+                  </div>
                 </div>
                 <div class="form-group">
-                  <label for="first">Question 9</label>
-                  <input type="text" class="form-control" id="ninth">
+                  <label for="ninth">Question 9</label>
+                  <div class="choices" id="ninth">
+                        <label><input type="radio" value="1">1</label>
+                        <label><input type="radio" value="2">2</label>
+                        <label><input type="radio" value="3">3</label>
+                        <label><input type="radio" value="4">4</label>
+                        <label><input type="radio" value="5">5</label>
+                  </div>
                 </div>
                 <div class="form-group">
-                  <label for="second">Question 10</label>
-                  <input type="text" class="form-control" id="tenth">
+                  <label for="tenth">Question 10</label>
+                  <div class="choices" id="tenth">
+                        <label><input type="radio" value="1">1</label>
+                        <label><input type="radio" value="2">2</label>
+                        <label><input type="radio" value="3">3</label>
+                        <label><input type="radio" value="4">4</label>
+                        <label><input type="radio" value="5">5</label>
+                  </div>
                 </div>
                 <button type="submit" class="btn btn-primary submit">Submit</button>
 
@@ -134,7 +194,7 @@
     $(".submit").on("click", function (event) {
         event.preventDefault();
         //create variable array for scores
-        var newFriendScores = [$("#first").val().trim(), $("#second").val().trim(), $("#third").val().trim(), $("#fourth").val().trim(), $("#fifth").val().trim(), $("#sixth").val().trim(), $("#seventh").val().trim(), $("#eigth").val().trim(), $("#ninth").val().trim(), $("#tenth").val().trim()];
+        var newFriendScores = [$('#first input[type="radio"]:checked').val(), $("#second input[type='radio']:checked").val(), $("#third input[type='radio']:checked").val(), $("#fourth input[type='radio']:checked").val(), $("#fifth input[type='radio']:checked").val(), $("#sixth input[type='radio']:checked").val(), $("#seventh input[type='radio']:checked").val(), $("#eighth input[type='radio']:checked").val(), $("#ninth input[type='radio']:checked").val(), $("#tenth input[type='radio']:checked").val()];
 
         //grab the form elements
         var newFriend = {
@@ -169,7 +229,7 @@
                 $("#fifth").val("");
                 $("#sixth").val("");
                 $("#seventh").val("");
-                $("#eigth").val("");
+                $("#eighth").val("");
                 $("#ninth").val("");
                 $("#tenth").val("");
         });
