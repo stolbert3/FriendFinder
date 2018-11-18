@@ -38,7 +38,6 @@ module.exports = function(app) {
             console.log("Score Array: " + currentFriendScoreArray);
             for (i=0; i<10; i++) {
                 scoreDifference += (Math.abs(parseInt(userAnswers[i]) - parseInt(currentFriendScoreArray[i])));
-                console.log("Loop #" + i + " score difference " + scoreDifference)
             };
             if (scoreDifference < closestFriendScore) {
                 closestFriendScore = scoreDifference;
@@ -48,7 +47,7 @@ module.exports = function(app) {
 
         friendsData.push(req.body); //adds new friend to friend database
 
-        res.json(friendsData[closestFriendIndex]); //returns index of closest friend to create alert on survey page
+        res.json(friendsData[closestFriendIndex]); //returns data of closest friend to create alert on survey page
 
         console.log(friendsData)
     });

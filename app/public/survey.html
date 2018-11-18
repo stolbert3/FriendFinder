@@ -157,10 +157,10 @@
                         <label><input type="radio" value="5">5</label>
                   </div>
                 </div>
-                <button style="text-align:right;" type="submit" class="btn btn-primary submit">Submit</button>
+                <button style="float:right;" type="submit" class="btn btn-primary btn-lg submit">Submit</button>
 
                 <!-- Trigger the modal with a button -->
-                <button id="modal" style="display:none; text-align:right;" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">View Your Top Match!</button>
+                <button id="modal" style="display:none; float:right;" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">View Your Top Match!</button>
 
                 <!-- Modal -->
                 <div id="myModal" class="modal fade" role="dialog">
@@ -223,20 +223,6 @@
 
                 $('#top-match-name').text(data.friendName);
                 $('#top-match-image').attr('src', data.friendPhoto);
-                
-                //clear the form when submitting
-                $("#friendName").val("");
-                $("#photo").val("");
-                $("#first").val("");
-                $("#second").val("");
-                $("#third").val("");
-                $("#fourth").val("");
-                $("#fifth").val("");
-                $("#sixth").val("");
-                $("#seventh").val("");
-                $("#eighth").val("");
-                $("#ninth").val("");
-                $("#tenth").val("");
         });
 
     });
