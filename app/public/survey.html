@@ -33,122 +33,134 @@
           <!-- Survey Page -->
           <div class="card">
             <div class="card-header">
-              Friend Survey
+              <h2 style="text-align:center;"> What kind of friend are you?</h2>
             </div>
             <div class="card-body">
               <form role="form">
                 <div class="form-group">
-                  <label for="name">Name</label>
+                  <h3 for="name" placeholder="Your Name">1. Name</h3>
                   <input type="text" class="form-control" id="friendName">
                 </div>
                 <div class="form-group">
-                  <label for="picture">Picture</label>
+                  <h3 for="picture" placeholder="https://linktoyourpicture.com">2. Picture</h3>
                   <input type="text" class="form-control" id="photo">
                 </div>
-                <div class="form-group">
-                  <label for="first">Question 1</label>
+                <h3 id="instructions-title">3. Survey </h3>
+                <h6 id="instructions">Instructions: Rate how true each of the following statements are about you, 1 being disagree and 5 being agree</h6>
+                <br>
+                <div style="text-align: center;" class="form-group">
+                  <h5 for="first">I am the life of the party</h5>
                   <div class="choices" id="first">
-                        <label><input type="radio" value="1">1</label>
-                        <label><input type="radio" value="2">2</label>
-                        <label><input type="radio" value="3">3</label>
-                        <label><input type="radio" value="4">4</label>
-                        <label><input type="radio" value="5">5</label>
+                        <label style="margin-right:30px;"><input type="radio" value="1"> 1</label>
+                        <label style="margin-right:30px;"><input type="radio" value="2"> 2</label>
+                        <label style="margin-right:30px;"><input type="radio" value="3"> 3</label>
+                        <label style="margin-right:30px;"><input type="radio" value="4"> 4</label>
+                        <label><input type="radio" value="5"> 5</label>
                   </div>
                 </div>
-                <div class="form-group">
-                  <label for="second">Question 2</label>
+                <hr>
+                <div style="text-align: center;" class="form-group">
+                  <h5 for="second">I have a vivid imagination</h5>
                   <div class="choices" id="second">
-                        <label><input type="radio" value="1">1</label>
-                        <label><input type="radio" value="2">2</label>
-                        <label><input type="radio" value="3">3</label>
-                        <label><input type="radio" value="4">4</label>
+                        <label style="margin-right:30px;"><input type="radio" value="1">1</label>
+                        <label style="margin-right:30px;"><input type="radio" value="2">2</label>
+                        <label style="margin-right:30px;"><input type="radio" value="3">3</label>
+                        <label style="margin-right:30px;"><input type="radio" value="4">4</label>
                         <label><input type="radio" value="5">5</label>
                   </div>
                 </div>
-                <div class="form-group">
-                  <label for="third">Question 3</label>
+                <hr>
+                <div style="text-align: center;" class="form-group">
+                  <h5 for="third">I follow a schedule</h5>
                   <div class="choices" id="third">
-                        <label><input type="radio" value="1">1</label>
-                        <label><input type="radio" value="2">2</label>
-                        <label><input type="radio" value="3">3</label>
-                        <label><input type="radio" value="4">4</label>
+                        <label style="margin-right:30px;"><input type="radio" value="1">1</label>
+                        <label style="margin-right:30px;"><input type="radio" value="2">2</label>
+                        <label style="margin-right:30px;"><input type="radio" value="3">3</label>
+                        <label style="margin-right:30px;"><input type="radio" value="4">4</label>
                         <label><input type="radio" value="5">5</label>
                   </div>
                 </div>
-                <div class="form-group">
-                  <label for="fourth">Question 4</label>
+                <hr>
+                <div style="text-align: center;" class="form-group">
+                  <h5 for="fourth">I am not interested in abstract ideas</h5>
                   <div class="choices" id="fourth">
-                        <label><input type="radio" value="1">1</label>
-                        <label><input type="radio" value="2">2</label>
-                        <label><input type="radio" value="3">3</label>
-                        <label><input type="radio" value="4">4</label>
+                        <label style="margin-right:30px;"><input type="radio" value="1">1</label>
+                        <label style="margin-right:30px;"><input type="radio" value="2">2</label>
+                        <label style="margin-right:30px;"><input type="radio" value="3">3</label>
+                        <label style="margin-right:30px;"><input type="radio" value="4">4</label>
                         <label><input type="radio" value="5">5</label>
                   </div>
                 </div>
-                <div class="form-group">
-                  <label for="fifth">Question 5</label>
+                <hr>
+                <div style="text-align: center;" class="form-group">
+                  <h5 for="fifth">I am relaxed most of the time</h5>
                   <div class="choices" id="fifth">
-                        <label><input type="radio" value="1">1</label>
-                        <label><input type="radio" value="2">2</label>
-                        <label><input type="radio" value="3">3</label>
-                        <label><input type="radio" value="4">4</label>
+                        <label style="margin-right:30px;"><input type="radio" value="1">1</label>
+                        <label style="margin-right:30px;"><input type="radio" value="2">2</label>
+                        <label style="margin-right:30px;"><input type="radio" value="3">3</label>
+                        <label style="margin-right:30px;"><input type="radio" value="4">4</label>
                         <label><input type="radio" value="5">5</label>
                   </div>
                 </div>
-                <div class="form-group">
-                  <label for="sixth">Question 6</label>
+                <hr>
+                <div style="text-align: center;" class="form-group">
+                  <h5 for="sixth">I take time out for others</h5>
                   <div class="choices" id="sixth">
-                        <label><input type="radio" value="1">1</label>
-                        <label><input type="radio" value="2">2</label>
-                        <label><input type="radio" value="3">3</label>
-                        <label><input type="radio" value="4">4</label>
+                        <label style="margin-right:30px;"><input type="radio" value="1">1</label>
+                        <label style="margin-right:30px;"><input type="radio" value="2">2</label>
+                        <label style="margin-right:30px;"><input type="radio" value="3">3</label>
+                        <label style="margin-right:30px;"><input type="radio" value="4">4</label>
                         <label><input type="radio" value="5">5</label>
                   </div>
                 </div>
-                <div class="form-group">
-                  <label for="seventh">Question 7</label>
+                <hr>
+                <div style="text-align: center;" class="form-group">
+                  <h5 for="seventh">I start conversations</h5>
                   <div class="choices" id="seventh">
-                        <label><input type="radio" value="1">1</label>
-                        <label><input type="radio" value="2">2</label>
-                        <label><input type="radio" value="3">3</label>
-                        <label><input type="radio" value="4">4</label>
+                        <label style="margin-right:30px;"><input type="radio" value="1">1</label>
+                        <label style="margin-right:30px;"><input type="radio" value="2">2</label>
+                        <label style="margin-right:30px;"><input type="radio" value="3">3</label>
+                        <label style="margin-right:30px;"><input type="radio" value="4">4</label>
                         <label><input type="radio" value="5">5</label>
                   </div>
                 </div>
-                <div class="form-group">
-                  <label for="eighth">Question 8</label>
+                <hr>
+                <div style="text-align: center;" class="form-group">
+                  <h5 for="eighth">I seldom feel blue</h5>
                   <div class="choices" id="eighth">
-                        <label><input type="radio" value="1">1</label>
-                        <label><input type="radio" value="2">2</label>
-                        <label><input type="radio" value="3">3</label>
-                        <label><input type="radio" value="4">4</label>
+                        <label style="margin-right:30px;"><input type="radio" value="1">1</label>
+                        <label style="margin-right:30px;"><input type="radio" value="2">2</label>
+                        <label style="margin-right:30px;"><input type="radio" value="3">3</label>
+                        <label style="margin-right:30px;"><input type="radio" value="4">4</label>
                         <label><input type="radio" value="5">5</label>
                   </div>
                 </div>
-                <div class="form-group">
-                  <label for="ninth">Question 9</label>
+                <hr>
+                <div style="text-align: center;" class="form-group">
+                  <h5 for="ninth">I make people feel at ease</h5>
                   <div class="choices" id="ninth">
-                        <label><input type="radio" value="1">1</label>
-                        <label><input type="radio" value="2">2</label>
-                        <label><input type="radio" value="3">3</label>
-                        <label><input type="radio" value="4">4</label>
+                        <label style="margin-right:30px;"><input type="radio" value="1">1</label>
+                        <label style="margin-right:30px;"><input type="radio" value="2">2</label>
+                        <label style="margin-right:30px;"><input type="radio" value="3">3</label>
+                        <label style="margin-right:30px;"><input type="radio" value="4">4</label>
                         <label><input type="radio" value="5">5</label>
                   </div>
                 </div>
-                <div class="form-group">
-                  <label for="tenth">Question 10</label>
+                <hr>
+                <div style="text-align: center;" class="form-group">
+                  <h5 for="tenth">I prefer a quiet night in to a busy night out</h5>
                   <div class="choices" id="tenth">
-                        <label><input type="radio" value="1">1</label>
-                        <label><input type="radio" value="2">2</label>
-                        <label><input type="radio" value="3">3</label>
-                        <label><input type="radio" value="4">4</label>
+                        <label style="margin-right:30px;"><input type="radio" value="1">1</label>
+                        <label style="margin-right:30px;"><input type="radio" value="2">2</label>
+                        <label style="margin-right:30px;"><input type="radio" value="3">3</label>
+                        <label style="margin-right:30px;"><input type="radio" value="4">4</label>
                         <label><input type="radio" value="5">5</label>
                   </div>
                 </div>
-                <button type="submit" class="btn btn-primary submit">Submit</button>
+                <button style="text-align:right;" type="submit" class="btn btn-primary submit">Submit</button>
 
                 <!-- Trigger the modal with a button -->
-                <button id="modal" style="display:none;" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">View Your Top Match!</button>
+                <button id="modal" style="display:none; text-align:right;" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">View Your Top Match!</button>
 
                 <!-- Modal -->
                 <div id="myModal" class="modal fade" role="dialog">
@@ -176,13 +188,6 @@
           </div>
         </div>
       </div>
-
-    <footer class="footer">
-      <div class="container">
-        <p>footer</p>
-      </div>
-    </footer>
-
   </div>
 
 </body>
